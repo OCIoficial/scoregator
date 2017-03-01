@@ -1,0 +1,36 @@
+* {
+    font-size: 12px;
+}
+
+table {
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+
+td, th {
+    text-align: center;
+    width: 80px;
+    height: 20px;
+    border: 1px solid #CCCCCC;
+}
+
+/* td.incorrect { */
+/*     background: rgb(240, 128, 128); */
+/* } */
+
+/* td.correct { */
+/*     background: rgb(169, 245, 169); */
+/* } */
+
+thead tr {
+    background-color: #E6EEEE
+}
+
+tr:nth-child(even) {
+    background-color: rgb(240, 240, 246);
+}
+
+.rank {
+    width: 60px;
+}

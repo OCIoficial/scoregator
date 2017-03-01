@@ -1,0 +1,8 @@
+{
+  "name": "@types/rx-http-request",
+  "version": "1.0.0",
+  "description": "Typescript definitions for rx-http-request",
+  "author": "nlehmann",
+  "main": "",
+  "license": "MIT"
+}

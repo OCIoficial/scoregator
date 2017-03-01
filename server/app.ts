@@ -8,6 +8,7 @@ import * as  session from 'express-session';
 import * as favicon from 'serve-favicon';
 
 import * as routes from './routes/index';
+import * as aggregate from './routes/aggregate';
 
 var app = express();
 
@@ -22,10 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret: 'somesecret',
-  resave: true,
-  saveUninitialized: true
-})); 
+    secret: 'somesecret',
+    resave: true,
+    saveUninitialized: true
+}));
 app.use(favicon(path.join(__dirname, '../public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/lib',express.static(path.join(__dirname, '../node_modules')));
@@ -35,13 +36,14 @@ app.use('/js',express.static(path.join(__dirname, '../public/assets/js')));
 app.use('/config',express.static(path.join(__dirname, '../config')));
 
 app.use('/', routes);
+app.use('/aggregate', aggregate)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  let err: any;
-  err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    let err: any;
+    err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -49,23 +51,25 @@ app.use((req, res, next) => {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use((err: any, req, res, next) => {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use((err: any, req: any, res: any, next: any) => {
+        res.status(err.status || 500);
+        // res.render('error', {
+        //     message: err.message,
+        //     error: err
+        // });
+        res.send(err.message)
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
-app.use((err: any, req, res, next) => {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+app.use((err: any, req: any, res: any, next: any) => {
+    res.status(err.status || 500);
+    // res.render('error', {
+    //     message: err.message,
+    //     error: {}
+    // });
+    res.send(err.message)
 });
 
 export = app;

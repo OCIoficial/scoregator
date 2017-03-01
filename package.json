@@ -1,9 +1,9 @@
 {
-  "name": "ts-express-angular2-node-boilerplate",
-  "version": "1.0.2",
-  "description": "Light-weight startup boilerplate for angular2 with typescript and expressjs",
-  "repository": "https://github.com/tngan/ts-express-angular2-node-boilerplate.git",
-  "author": "tngan",
+  "name": "scoreggator",
+  "version": "0.0.1",
+  "description": "Simple score aggregator for competitive programming",
+  "repository": "https://github.com/OCIoficial/scoreggator.git",
+  "author": "nlehmann",
   "license": "MIT",
   "keywords": [
     "angular2",
@@ -17,21 +17,17 @@
     "dev": "concurrently \"npm run tsc:w\" \"npm start\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "nodemon ./server/bin/www",
-    "typings": "typings",
-    "postinstall": "typings install"
+    "start": "nodemon ./server/bin/www"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.1",
-    "@angular/router-deprecated": "2.0.0-rc.2",
-    "@angular/upgrade": "2.0.0-rc.4",
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
     "ejs": "^2.4.2",
@@ -40,15 +36,22 @@
     "express": "^4.13.4",
     "express-session": "^1.11.3",
     "reflect-metadata": "0.1.2",
+    "rx-http-request": "^1.2.0",
+    "rxjs": "5.0.1",
     "serve-favicon": "^2.3.0",
-    "systemjs": "0.19.27"
+    "systemjs": "0.19.27",
+    "zone.js": "^0.7.4"
   },
   "devDependencies": {
+    "@types/body-parser": "0.0.33",
+    "@types/cookie-parser": "^1.3.30",
+    "@types/core-js": "^0.9.35",
+    "@types/express-session": "0.0.32",
+    "@types/node": "^7.0.5",
+    "@types/rx-http-request": "file:@types/rx-http-request",
+    "@types/serve-favicon": "^2.2.28",
     "concurrently": "^2.0.0",
     "core-js": "^2.4.0",
-    "rxjs": "5.0.0-beta.6",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.4",
-    "zone.js": "^0.6.12"
+    "typescript": "^2.0.10"
   }
 }
